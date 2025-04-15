@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: mymavenapp
-        image: bharathac5775/mymavenapp:v1  # Replace with your actual image name and tag
+        image: nithik29/mymaven:v1  # Replace with your actual image name and tag
         ports:
         - containerPort: 8080  # Assuming the Java application runs on port 8080, adjust if needed
         env:
