@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: mymavenapp
+  labels:
+    app: mymavenapp
+spec:
+  type: NodePort  # You can also use 'LoadBalancer' if you're running in a cloud environment
+  ports:
+    - port: 8080  # Port exposed by the service
+      targetPort: 8080  # Port the Java application is listening on
+      protocol: TCP
+  selector:
+    app: mymavenapp
