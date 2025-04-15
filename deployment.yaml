@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: mymavenapp
+  labels:
+    app: mymavenapp
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: mymavenapp
+  template:
+    metadata:
+      labels:
+        app: mymavenapp
+    spec:
+      containers:
+      - name: mymavenapp
+        image: bharathac5775/mymavenapp:v1  # Replace with your actual image name and tag
+        ports:
+        - containerPort: 8080  # Assuming the Java application runs on port 8080, adjust if needed
+        env:
+        - name: JAVA_OPTS
+          value: "-Xms512m -Xmx1024m"  # Optional: Configure memory settings for the Java app if needed
